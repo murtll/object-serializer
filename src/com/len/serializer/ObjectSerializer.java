@@ -6,6 +6,11 @@ import java.util.stream.Collectors;
 
 public class ObjectSerializer {
 
+    /**
+     * Takes array of ints and returns xml array as string
+     * @param object array of ints
+     * @return xml array as string
+     */
     public static String toXml(int[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -15,7 +20,12 @@ public class ObjectSerializer {
         sb.append("</array>");
         return sb.toString();
     }
-
+    
+    /**
+     * Takes array of shorts and returns xml array as string
+     * @param object array of shorts
+     * @return xml array as string
+     */
     public static String toXml(short[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -26,6 +36,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of bytes and returns xml array as string
+     * @param object array of bytes
+     * @return xml array as string
+     */
     public static String toXml(byte[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -36,6 +51,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of longs and returns xml array as string
+     * @param object array of longs
+     * @return xml array as string
+     */
     public static String toXml(long[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -46,6 +66,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of chars and returns xml array as string
+     * @param object array of chars
+     * @return xml array as string
+     */
     public static String toXml(char[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -56,6 +81,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of doubles and returns xml array as string
+     * @param object array of doubles
+     * @return xml array as string
+     */
     public static String toXml(double[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -66,6 +96,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of floats and returns xml array as string
+     * @param object array of floats
+     * @return xml array as string
+     */
     public static String toXml(float[] object) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -76,22 +111,47 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of ints and returns json array as string
+     * @param object array of ints
+     * @return json array as string
+     */
     public static String toJson(int[] object) {
         return Arrays.toString(object);
     }
 
+    /**
+     * Takes array of shorts and returns json array as string
+     * @param object array of shorts
+     * @return json array as string
+     */
     public static String toJson(short[] object) {
         return Arrays.toString(object);
     }
 
+    /**
+     * Takes array of bytes and returns json array as string
+     * @param object array of bytes
+     * @return json array as string
+     */
     public static String toJson(byte[] object) {
         return Arrays.toString(object);
     }
 
+    /**
+     * Takes array of longs and returns json array as string
+     * @param object array of longs
+     * @return json array as string
+     */
     public static String toJson(long[] object) {
         return Arrays.toString(object);
     }
 
+    /**
+     * Takes array of chars and returns json array as string
+     * @param object array of chars
+     * @return json array as string
+     */
     public static String toJson(char[] object) {
         StringBuilder sb = new StringBuilder("[");
         if (object.length > 0) {
@@ -106,14 +166,30 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes array of doubles and returns json array as string
+     * @param object array of doubles
+     * @return json array as string
+     */
     public static String toJson(double[] object) {
         return Arrays.toString(object);
     }
 
+    /**
+     * Takes array of floats and returns json array as string
+     * @param object array of floats
+     * @return json array as string
+     */
     public static String toJson(float[] object) {
         return Arrays.toString(object);
     }
 
+    /**
+     * Takes an object with fields marked with @MyXML and returns xml string
+     * @param object object to serialize
+     * @return xml string
+     * @see com.len.serializer.MyXML
+     */
     public static <T, V> String toXml(T object) {
 
         if (isPrimitive(object)) {
@@ -180,6 +256,12 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes an object with fields marked with @MyJSON and returns json string
+     * @param object object to serialize
+     * @return xml string
+     * @see com.len.serializer.MyJSON
+     */
     public static <T, V> String toJson(T object) {
 
         if (isPrimitive(object)) {
@@ -244,6 +326,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Checks if object type is primitive type
+     * @param object object to check
+     * @return true if type is primitive, false if no
+     */
     private static <T> boolean isPrimitive(T object) {
         return object instanceof Boolean ||
                 object instanceof String ||
@@ -256,6 +343,11 @@ public class ObjectSerializer {
                 object instanceof Double;
     }
 
+    /**
+     * Takes Iterable and returns xml array as string
+     * @param itr Iterable to iterate
+     * @return xml array as string
+     */
     private static <V> String toXmlArray(Iterable<V> itr) {
         StringBuilder sb = new StringBuilder();
         sb.append("<array>");
@@ -266,6 +358,11 @@ public class ObjectSerializer {
         return sb.toString();
     }
 
+    /**
+     * Takes Iterable and returns json array as string
+     * @param itr Iterable to iterate
+     * @return json array as string
+     */
     private static <V> String toJsonArray(Iterable<V> itr) {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
