@@ -4,6 +4,10 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+/**
+ * Class to serialize objects to json and xml strings
+ * Contains public static methods toXml (to convert to xml) and toJson (to convert to json)
+ */
 public class ObjectSerializer {
 
     /**
